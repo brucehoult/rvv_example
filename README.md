@@ -63,4 +63,4 @@ Expected output:
     29.478806 29.478806
 
 You can trace the qemu execution by adding "-singlestep -d nochain,cpu" to the qemu command line.
-Cross-reference instruction addresses with the output from "riscv64-unknown-elf-gcc -d main".
+Cross-reference instruction addresses with the output from "riscv64-unknown-elf-objdump -d main".
