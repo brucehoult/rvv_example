@@ -11,7 +11,8 @@
     
     .globl vec_len_rvv
 vec_len_rvv:
-    vsetvli vl, n, e32
+    # 32 bit elements, don't care (Agnostic) how tail and mask are handled
+    vsetvli vl, n, e32, ta,ma
     vlseg3e32.v Xs, (pts) # loads interleaved Xs, Ys, Zs into 3 registers
     vfmul.vv lens, Xs, Xs
     vfmacc.vv lens, Ys, Ys
